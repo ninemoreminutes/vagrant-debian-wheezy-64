@@ -64,9 +64,11 @@ if [ ! -e "${FOLDER_ISO}/custom.iso" ]; then
   # in osx lion 10.7.4, tar won't extract anything and will fail silently. If that happens, look for a newer version of bsd tar
   if [ ! `ls $FOLDER_ISO_CUSTOM` ]; then
       TAR_COMMAND=tar
-      if [ -x '/usr/local/bin/bsdtar' ];
+      #if [ -x '/usr/local/bin/bsdtar' ];
+      if [ -x '/opt/local/bin/bsdtar' ];
       then
-          LOCAL_BSD_TAR=/usr/local/bin/bsdtar
+          #LOCAL_BSD_TAR=/usr/local/bin/bsdtar
+          LOCAL_BSD_TAR=/opt/local/bin/bsdtar
       else
           LOCAL_BSD_TAR=/usr/bin/bsdtar
       fi
